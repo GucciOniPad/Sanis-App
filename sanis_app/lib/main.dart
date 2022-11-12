@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'Sani App lol'),
     );
   }
 }
@@ -57,7 +57,7 @@ class _MyHomePageState extends State<MyHomePage> {
       // so that the display can reflect the updated values. If we changed
       // _counter without calling setState(), then the build method would not be
       // called again, and so nothing would appear to happen.
-      _counter++;
+      _counter += 2; //changed the counter to add 2 not 1
     });
   }
 
@@ -96,11 +96,11 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             const Text(
-              'You have pushed the button this many times:',
+              'You have pressed the blue button',
             ),
             Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
+              '$_counter times',
+              style: Theme.of(context).textTheme.headline5,
             ),
           ],
         ),
