@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:html';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
@@ -65,7 +66,7 @@ class SaniApp extends StatelessWidget {
                           color: platinumWhite,
                           fontWeight: FontWeight.bold),
                     ),
-                  )
+                  ),
                 ],
               ),
               Row(
@@ -130,5 +131,31 @@ class SaniApp extends StatelessWidget {
         ),
       ),
     );
+  }
+}
+
+class einsatzprotokollPage extends StatelessWidget {
+  const einsatzprotokollPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+        title: 'Einsatzprotokoll Page',
+        home: Scaffold(
+          appBar: AppBar(
+            //App Bar
+            backgroundColor: Colors.white,
+            elevation: 0.5, //Line under app bar
+            title: const Text(
+              'Schulsanitöter Organisationsapp', //Text displayed in app bar
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                color: crayolaBlue,
+                fontSize: 35,
+              ),
+            ),
+          ),
+          body: Text('Neue seite lol'),
+        ));
   }
 }
