@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
@@ -8,6 +7,7 @@ const crayolaBlue = Color(0xff1b2f33);
 const platinumWhite = Color(0xffebebeb);
 const burgundy = Color(0xff841b21);
 const gunmetal = Color(0xff2a2f3c);
+
 void main() {
   runApp(const SaniApp());
 }
@@ -50,7 +50,7 @@ class SaniApp extends StatelessWidget {
                         height: 80,
                         decoration: BoxDecoration(
                             color: burgundy,
-                            borderRadius: BorderRadius.circular(12),
+                            borderRadius: BorderRadius.circular(6),
                             boxShadow: const [
                               BoxShadow(
                                   color: Colors.grey,
@@ -79,7 +79,7 @@ class SaniApp extends StatelessWidget {
                         height: 450,
                         decoration: BoxDecoration(
                             color: gunmetal,
-                            borderRadius: BorderRadius.circular(12),
+                            borderRadius: BorderRadius.circular(6),
                             boxShadow: const [
                               BoxShadow(
                                   color: Colors.grey,
@@ -103,7 +103,7 @@ class SaniApp extends StatelessWidget {
                         padding: const EdgeInsets.all(20),
                         decoration: BoxDecoration(
                             color: gunmetal,
-                            borderRadius: BorderRadius.circular(12),
+                            borderRadius: BorderRadius.circular(6),
                             boxShadow: const [
                               BoxShadow(
                                   color: Colors.grey,
