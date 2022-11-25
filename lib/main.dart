@@ -2,11 +2,11 @@ import 'dart:convert';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
-//Colors
+//Colors (5 hoch v. normal)
 const crayolaBlue = Color(0xff1b2f33);
 const platinumWhite = Color(0xffebebeb);
-const burgundy = Color(0xff841b21);
-const gunmetal = Color(0xff2a2f3c);
+const burgundy = Color(0xffE21239);
+const gunmetal = Color(0xff3f6f78);
 
 void main() {
   runApp(const SaniApp());
@@ -25,7 +25,7 @@ class SaniApp extends StatelessWidget {
             backgroundColor: Colors.white,
             elevation: 0.5, //Line under app bar
             title: const Text(
-              'Schulsanitäter Organisationsapp', //Text displayed in app bar
+              'Schulsanitöter Organisationsapp', //Text displayed in app bar
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 color: crayolaBlue,
