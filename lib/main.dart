@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
+//Colors
 const crayolaBlue = Color(0xff1b2f33);
 const platinumWhite = Color(0xffebebeb);
 const burgundy = Color(0xff841b21);
@@ -21,11 +22,10 @@ class SaniApp extends StatelessWidget {
       home: Scaffold(
           appBar: AppBar(
             //App Bar
-            shadowColor: Colors.white,
             backgroundColor: Colors.white,
-            elevation: 0.0,
+            elevation: 0.5, //Line under app bar
             title: const Text(
-              'Schulsanitäter Organisationsapp',
+              'Schulsanitäter Organisationsapp', //Text displayed in app bar
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 color: crayolaBlue,
@@ -55,7 +55,7 @@ class SaniApp extends StatelessWidget {
                               BoxShadow(
                                   color: Colors.grey,
                                   blurRadius: 2.0,
-                                  offset: Offset(12.0, 12.0))
+                                  offset: Offset(6.0, 6.0))
                             ]),
                         child: const Text(
                           'NEUES EINSATZPROTOKOLL',
@@ -84,7 +84,7 @@ class SaniApp extends StatelessWidget {
                               BoxShadow(
                                   color: Colors.grey,
                                   blurRadius: 2.0,
-                                  offset: Offset(12.0, 12.0))
+                                  offset: Offset(6.0, 6.0))
                             ]),
 
                         // color: Color(0xff1b2f33),
@@ -108,7 +108,7 @@ class SaniApp extends StatelessWidget {
                               BoxShadow(
                                   color: Colors.grey,
                                   blurRadius: 2.0,
-                                  offset: Offset(12.0, 12.0))
+                                  offset: Offset(6.0, 6.0))
                             ]),
                         width: 300,
                         height: 450,
