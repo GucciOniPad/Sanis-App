@@ -25,8 +25,9 @@ class SaniApp extends StatelessWidget {
             backgroundColor: Colors.white,
             elevation: 0.0,
             title: const Text(
-              'Saniapp',
+              'Schulsanitäter Organisationsapp',
               style: TextStyle(
+                fontWeight: FontWeight.bold,
                 color: crayolaBlue,
                 fontSize: 35,
               ),
@@ -45,7 +46,7 @@ class SaniApp extends StatelessWidget {
                         margin: const EdgeInsets.only(top: 60),
                         padding:
                             const EdgeInsets.all(25), //TODO different solution
-                        width: 800,
+                        width: 640,
                         height: 80,
                         decoration: BoxDecoration(
                             color: burgundy,
@@ -59,17 +60,20 @@ class SaniApp extends StatelessWidget {
                         child: const Text(
                           'NEUES EINSATZPROTOKOLL',
                           textAlign: TextAlign.center,
-                          style: TextStyle(fontSize: 20, color: platinumWhite),
+                          style: TextStyle(
+                              fontSize: 20,
+                              color: platinumWhite,
+                              fontWeight: FontWeight.bold),
                         ),
                       )
                     ],
                   ),
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Container(
                         //lower left button
-                        margin: const EdgeInsets.only(top: 40),
+                        margin: const EdgeInsets.only(top: 40, right: 20),
                         padding: const EdgeInsets.all(20),
                         width: 300,
                         height: 450,
@@ -87,12 +91,15 @@ class SaniApp extends StatelessWidget {
                         child: const Text(
                           'Protokollarchiv',
                           textAlign: TextAlign.center,
-                          style: TextStyle(fontSize: 20, color: platinumWhite),
+                          style: TextStyle(
+                              fontSize: 20,
+                              color: platinumWhite,
+                              fontWeight: FontWeight.bold),
                         ),
                       ),
                       Container(
                         //lower right button
-                        margin: const EdgeInsets.only(top: 40),
+                        margin: const EdgeInsets.only(top: 40, left: 20),
                         padding: const EdgeInsets.all(20),
                         decoration: BoxDecoration(
                             color: gunmetal,
@@ -109,7 +116,10 @@ class SaniApp extends StatelessWidget {
                         child: const Text(
                           'Schichtplan',
                           textAlign: TextAlign.center,
-                          style: TextStyle(fontSize: 20, color: platinumWhite),
+                          style: TextStyle(
+                              fontSize: 20,
+                              color: platinumWhite,
+                              fontWeight: FontWeight.bold),
                         ),
                       ),
                     ],
