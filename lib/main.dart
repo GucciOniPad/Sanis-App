@@ -4,6 +4,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:sani_app/theme/theme_constants.dart';
 import 'package:sani_app/theme/theme_manager.dart';
 
@@ -87,6 +88,14 @@ class _SaniAppState extends State<SaniApp> {
                 children: [
                   //  Padding(padding: EdgeInsets.only(top: 180)),
                   Container(
+                    decoration: BoxDecoration(
+                      boxShadow: const [
+                        BoxShadow(
+                            color: Colors.grey,
+                            blurRadius: 2.0,
+                            offset: Offset(6.0, 6.0))
+                      ],
+                    ),
                     margin: const EdgeInsets.only(top: 120),
                     //  padding: const EdgeInsets.all(10),
                     child: SizedBox(
@@ -116,6 +125,14 @@ class _SaniAppState extends State<SaniApp> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Container(
+                    decoration: BoxDecoration(
+                      boxShadow: const [
+                        BoxShadow(
+                            color: Colors.grey,
+                            blurRadius: 2.0,
+                            offset: Offset(6.0, 6.0))
+                      ],
+                    ),
                     margin: const EdgeInsets.only(top: 40, right: 20),
                     // padding: const EdgeInsets.all(10),
                     child: SizedBox(
@@ -160,6 +177,14 @@ class _SaniAppState extends State<SaniApp> {
                     ),
                   ),
                   Container(
+                    decoration: BoxDecoration(
+                      boxShadow: const [
+                        BoxShadow(
+                            color: Colors.grey,
+                            blurRadius: 2.0,
+                            offset: Offset(6.0, 6.0))
+                      ],
+                    ),
                     margin: const EdgeInsets.only(top: 40, left: 20),
                     //    padding: const EdgeInsets.all(10),
                     child: SizedBox(
