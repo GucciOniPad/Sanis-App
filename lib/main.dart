@@ -2,24 +2,56 @@ import 'dart:convert';
 import 'dart:html';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:sani_app/theme/theme_constants.dart';
+import 'package:sani_app/theme/theme_manager.dart';
 
 //Colors (5 hoch v. normal)
 const crayolaBlue = Color(0xff1b2f33);
 const platinumWhite = Color(0xffebebeb);
 const burgundy = Color(0xffE21239);
 const gunmetal = Color(0xff3f6f78);
+//const smokyBlack = Color(0xFF121212);
+const jet = Color(0xFF303030);
 
 void main() {
   runApp(const SaniApp());
 }
 
-class SaniApp extends StatelessWidget {
+ThemeManager _themeManager = ThemeManager();
+
+class SaniApp extends StatefulWidget {
   const SaniApp({super.key});
+
+  @override
+  State<SaniApp> createState() => _SaniAppState();
+}
+
+class _SaniAppState extends State<SaniApp> {
+  @override
+  void initState() {
+    super.initState();
+    _themeManager.addListener((themeListener));
+  }
+
+  themeListener() {
+    if (mounted) {
+      setState(() {});
+    }
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    _themeManager.removeListener((themeListener));
+  }
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Saniapp',
+      theme: lightTheme,
+      darkTheme: darkTheme,
+      themeMode: _themeManager.themeMode,
       home: Scaffold(
         appBar: AppBar(
           //App Bar
@@ -35,7 +67,7 @@ class SaniApp extends StatelessWidget {
           ),
         ),
         body: Container(
-          color: Colors.white,
+          //color: Colors.white,
           // alignment: Alignment.topCenter,
           child: Column(
             children: <Widget>[
@@ -134,6 +166,8 @@ class SaniApp extends StatelessWidget {
   }
 }
 
+//einsatzprotokoll page 
+
 class einsatzprotokollPage extends StatelessWidget {
   const einsatzprotokollPage({super.key});
 
@@ -144,18 +178,20 @@ class einsatzprotokollPage extends StatelessWidget {
         home: Scaffold(
           appBar: AppBar(
             //App Bar
-            backgroundColor: Colors.white,
+            actions: [
+              Switch(
+                  value: _themeManager.themeMode == ThemeMode.dark,
+                  onChanged: (newValue) {
+                    _themeManager.toggleTheme(newValue);
+                  })
+            ],
+            //backgroundColor: Colors.white,
             elevation: 0.5, //Line under app bar
             title: const Text(
               'Schulsanitöter Organisationsapp', //Text displayed in app bar
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                color: crayolaBlue,
-                fontSize: 35,
-              ),
             ),
           ),
-          body: Text('Neue seite lol'),
-        ));
+          
+       
   }
 }
