@@ -84,7 +84,7 @@ class _SaniAppState extends State<SaniApp> {
                 children: [
                   Container(
                     //top button
-                    margin: const EdgeInsets.only(top: 60),
+                    margin: const EdgeInsets.only(top: 120),
                     padding: const EdgeInsets.all(25), //TODO different solution
                     width: 640,
                     height: 80,
@@ -117,7 +117,7 @@ class _SaniAppState extends State<SaniApp> {
                     margin: const EdgeInsets.only(top: 40, right: 20),
                     padding: const EdgeInsets.all(20),
                     width: 300,
-                    height: 450,
+                    height: 300,
                     decoration: BoxDecoration(
                       color: gunmetal,
                       borderRadius: BorderRadius.circular(6),
@@ -128,7 +128,6 @@ class _SaniAppState extends State<SaniApp> {
                             offset: Offset(6.0, 6.0))
                       ],
                     ),
-
                     // color: Color(0xff1b2f33),
                     child: const Text(
                       'Protokollarchiv',
@@ -144,16 +143,17 @@ class _SaniAppState extends State<SaniApp> {
                     margin: const EdgeInsets.only(top: 40, left: 20),
                     padding: const EdgeInsets.all(20),
                     decoration: BoxDecoration(
-                        color: gunmetal,
-                        borderRadius: BorderRadius.circular(6),
-                        boxShadow: const [
-                          BoxShadow(
-                              color: Colors.grey,
-                              blurRadius: 2.0,
-                              offset: Offset(6.0, 6.0))
-                        ]),
+                      color: gunmetal,
+                      borderRadius: BorderRadius.circular(6),
+                      boxShadow: const [
+                        BoxShadow(
+                            color: Colors.grey,
+                            blurRadius: 2.0,
+                            offset: Offset(6.0, 6.0))
+                      ],
+                    ),
                     width: 300,
-                    height: 450,
+                    height: 300,
                     //color: Color(0xff1b2f33),
                     child: const Text(
                       'Schichtplan',
@@ -181,22 +181,25 @@ class einsatzprotokollPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'Einsatzprotokoll Page',
-        home: Scaffold(
-            appBar: AppBar(
+      title: 'Einsatzprotokoll Page',
+      home: Scaffold(
+        appBar: AppBar(
           //App Bar
           actions: [
             Switch(
-                value: _themeManager.themeMode == ThemeMode.dark,
-                onChanged: (newValue) {
-                  _themeManager.toggleTheme(newValue);
-                })
+              value: _themeManager.themeMode == ThemeMode.dark,
+              onChanged: (newValue) {
+                _themeManager.toggleTheme(newValue);
+              },
+            )
           ],
           //backgroundColor: Colors.white,
           elevation: 0.5, //Line under app bar
           title: const Text(
             'Schulsanitöter Organisationsapp', //Text displayed in app bar
           ),
-        )));
+        ),
+      ),
+    );
   }
 }
