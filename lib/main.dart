@@ -1,5 +1,6 @@
-//import 'dart:convert';
-//import 'package:flutter/foundation.dart';
+import 'dart:convert';
+import 'dart:html';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:sani_app/theme/theme_constants.dart';
 import 'package:sani_app/theme/theme_manager.dart';
@@ -52,25 +53,23 @@ class _SaniAppState extends State<SaniApp> {
       darkTheme: darkTheme,
       themeMode: _themeManager.themeMode,
       home: Scaffold(
-          appBar: AppBar(
-            //App Bar
-            actions: [
-              Switch(
-                  value: _themeManager.themeMode == ThemeMode.dark,
-                  onChanged: (newValue) {
-                    _themeManager.toggleTheme(newValue);
-                  })
-            ],
-            //backgroundColor: Colors.white,
-            elevation: 0.5, //Line under app bar
-            title: const Text(
-              'Schulsanitöter Organisationsapp', //Text displayed in app bar
+        appBar: AppBar(
+          //App Bar
+          backgroundColor: Colors.white,
+          elevation: 0.5, //Line under app bar
+          title: const Text(
+            'Schulsanitöter Organisationsapp', //Text displayed in app bar
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              color: crayolaBlue,
+              fontSize: 35,
             ),
           ),
-          body: Container(
-              //color: Colors.white,
-              // alignment: Alignment.topCenter,
-              child: Column(
+        ),
+        body: Container(
+          //color: Colors.white,
+          // alignment: Alignment.topCenter,
+          child: Column(
             children: <Widget>[
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -82,14 +81,15 @@ class _SaniAppState extends State<SaniApp> {
                     width: 640,
                     height: 80,
                     decoration: BoxDecoration(
-                        color: burgundy,
-                        borderRadius: BorderRadius.circular(6),
-                        boxShadow: const [
-                          BoxShadow(
-                              color: Colors.grey,
-                              blurRadius: 2.0,
-                              offset: Offset(6.0, 6.0))
-                        ]),
+                      color: burgundy,
+                      borderRadius: BorderRadius.circular(6),
+                      boxShadow: const [
+                        BoxShadow(
+                            color: Colors.grey,
+                            blurRadius: 2.0,
+                            offset: Offset(6.0, 6.0))
+                      ],
+                    ),
                     child: const Text(
                       'NEUES EINSATZPROTOKOLL',
                       textAlign: TextAlign.center,
@@ -98,7 +98,7 @@ class _SaniAppState extends State<SaniApp> {
                           color: platinumWhite,
                           fontWeight: FontWeight.bold),
                     ),
-                  )
+                  ),
                 ],
               ),
               Row(
@@ -111,14 +111,15 @@ class _SaniAppState extends State<SaniApp> {
                     width: 300,
                     height: 450,
                     decoration: BoxDecoration(
-                        color: gunmetal,
-                        borderRadius: BorderRadius.circular(6),
-                        boxShadow: const [
-                          BoxShadow(
-                              color: Colors.grey,
-                              blurRadius: 2.0,
-                              offset: Offset(6.0, 6.0))
-                        ]),
+                      color: gunmetal,
+                      borderRadius: BorderRadius.circular(6),
+                      boxShadow: const [
+                        BoxShadow(
+                            color: Colors.grey,
+                            blurRadius: 2.0,
+                            offset: Offset(6.0, 6.0))
+                      ],
+                    ),
 
                     // color: Color(0xff1b2f33),
                     child: const Text(
@@ -158,7 +159,39 @@ class _SaniAppState extends State<SaniApp> {
                 ],
               )
             ],
-          ))),
+          ),
+        ),
+      ),
     );
+  }
+}
+
+//einsatzprotokoll page 
+
+class einsatzprotokollPage extends StatelessWidget {
+  const einsatzprotokollPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+        title: 'Einsatzprotokoll Page',
+        home: Scaffold(
+          appBar: AppBar(
+            //App Bar
+            actions: [
+              Switch(
+                  value: _themeManager.themeMode == ThemeMode.dark,
+                  onChanged: (newValue) {
+                    _themeManager.toggleTheme(newValue);
+                  })
+            ],
+            //backgroundColor: Colors.white,
+            elevation: 0.5, //Line under app bar
+            title: const Text(
+              'Schulsanitöter Organisationsapp', //Text displayed in app bar
+            ),
+          ),
+          
+       
   }
 }
