@@ -50,6 +50,7 @@ class _SaniAppState extends State<SaniApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Saniapp',
       theme: lightTheme,
       darkTheme: darkTheme,
