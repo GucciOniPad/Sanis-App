@@ -1,6 +1,8 @@
 //import 'dart:convert';
 //import 'dart:html';
 //import 'package:flutter/foundation.dart';
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:sani_app/theme/theme_constants.dart';
 import 'package:sani_app/theme/theme_manager.dart';
@@ -63,8 +65,9 @@ class _SaniAppState extends State<SaniApp> {
                 })
           ],
           leading: IconButton(
-            icon: Image.asset('assets/splash.png'),
-            onPressed: (() {}),
+            icon: Image.asset('assets/darksplash.png'),
+            onPressed: () => exit(0),
+            tooltip: 'quit apllication',
           ),
           elevation: 0.5, //Line under app bar
           title: const Text(
