@@ -1,6 +1,6 @@
-import 'dart:convert';
-import 'dart:html';
-import 'package:flutter/foundation.dart';
+//import 'dart:convert';
+//import 'dart:html';
+//import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:sani_app/theme/theme_constants.dart';
 import 'package:sani_app/theme/theme_manager.dart';
@@ -55,16 +55,17 @@ class _SaniAppState extends State<SaniApp> {
       home: Scaffold(
         appBar: AppBar(
           //App Bar
-          backgroundColor: Colors.white,
+          actions: [
+            Switch(
+                value: _themeManager.themeMode == ThemeMode.dark,
+                onChanged: (newValue) {
+                  _themeManager.toggleTheme(newValue);
+                })
+          ],
+          //backgroundColor: Colors.white,
           elevation: 0.5, //Line under app bar
           title: const Text(
-            'Schulsanitöter Organisationsapp', //Text displayed in app bar
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-              color: crayolaBlue,
-              fontSize: 35,
-            ),
-          ),
+              'Schulsanitöter Organisationsapp'), //Text displayed in app bar
         ),
         body: Container(
           //color: Colors.white,
@@ -166,8 +167,7 @@ class _SaniAppState extends State<SaniApp> {
   }
 }
 
-//einsatzprotokoll page 
-
+//einsatzprotokoll page
 class einsatzprotokollPage extends StatelessWidget {
   const einsatzprotokollPage({super.key});
 
@@ -176,22 +176,20 @@ class einsatzprotokollPage extends StatelessWidget {
     return MaterialApp(
         title: 'Einsatzprotokoll Page',
         home: Scaffold(
-          appBar: AppBar(
-            //App Bar
-            actions: [
-              Switch(
-                  value: _themeManager.themeMode == ThemeMode.dark,
-                  onChanged: (newValue) {
-                    _themeManager.toggleTheme(newValue);
-                  })
-            ],
-            //backgroundColor: Colors.white,
-            elevation: 0.5, //Line under app bar
-            title: const Text(
-              'Schulsanitöter Organisationsapp', //Text displayed in app bar
-            ),
+            appBar: AppBar(
+          //App Bar
+          actions: [
+            Switch(
+                value: _themeManager.themeMode == ThemeMode.dark,
+                onChanged: (newValue) {
+                  _themeManager.toggleTheme(newValue);
+                })
+          ],
+          //backgroundColor: Colors.white,
+          elevation: 0.5, //Line under app bar
+          title: const Text(
+            'Schulsanitöter Organisationsapp', //Text displayed in app bar
           ),
-          
-       
+        )));
   }
 }
