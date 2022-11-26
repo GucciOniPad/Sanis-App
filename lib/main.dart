@@ -11,7 +11,7 @@ const platinumWhite = Color(0xffebebeb);
 const burgundy = Color(0xffE21239);
 const gunmetal = Color(0xff3f6f78);
 //const smokyBlack = Color(0xFF121212); <- evtl. andere Fabre für Darkmode
-const jet = Color(0xFF303030);
+const jet = Color(0xFF303030); //aktuelle Darkmode Farbe
 
 void main() {
   runApp(const SaniApp());
