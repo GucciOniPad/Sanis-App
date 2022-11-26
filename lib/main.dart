@@ -47,6 +47,7 @@ class _SaniAppState extends State<SaniApp> {
     _themeManager.removeListener((themeListener));
   } //dispose theme listener
 
+  int currentPage = 0;
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -84,86 +85,118 @@ class _SaniAppState extends State<SaniApp> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
+                  //  Padding(padding: EdgeInsets.only(top: 180)),
                   Container(
-                    //top button
                     margin: const EdgeInsets.only(top: 120),
-                    padding: const EdgeInsets.all(25), //TODO different solution
-                    width: 640,
-                    height: 80,
-                    decoration: BoxDecoration(
-                      color: burgundy,
-                      borderRadius: BorderRadius.circular(6),
-                      boxShadow: const [
-                        BoxShadow(
-                            color: Colors.grey,
-                            blurRadius: 2.0,
-                            offset: Offset(6.0, 6.0))
-                      ],
+                    //  padding: const EdgeInsets.all(10),
+                    child: SizedBox(
+                      width: 640,
+                      height: 80,
+                      child: ElevatedButton(
+                        style: ButtonStyle(
+                          backgroundColor:
+                              MaterialStatePropertyAll<Color>(burgundy),
+                        ),
+                        onPressed: () {
+                          print("NEUES EINSATZPROTOKOLL");
+                        },
+                        child: Text(
+                          'NEUES EINSATZPROTOKOLL',
+                          style: TextStyle(
+                              fontSize: 20,
+                              color: platinumWhite,
+                              fontWeight: FontWeight.bold),
+                        ),
+                      ),
                     ),
-                    child: const Text(
-                      'NEUES EINSATZPROTOKOLL',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                          fontSize: 20,
-                          color: platinumWhite,
-                          fontWeight: FontWeight.bold),
-                    ),
-                  ),
+                  )
                 ],
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Container(
-                    //lower left button
                     margin: const EdgeInsets.only(top: 40, right: 20),
-                    padding: const EdgeInsets.all(20),
-                    width: 300,
-                    height: 300,
-                    decoration: BoxDecoration(
-                      color: gunmetal,
-                      borderRadius: BorderRadius.circular(6),
-                      boxShadow: const [
-                        BoxShadow(
-                            color: Colors.grey,
-                            blurRadius: 2.0,
-                            offset: Offset(6.0, 6.0))
-                      ],
-                    ),
-                    // color: Color(0xff1b2f33),
-                    child: const Text(
-                      'Protokollarchiv',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                          fontSize: 20,
-                          color: platinumWhite,
-                          fontWeight: FontWeight.bold),
+                    // padding: const EdgeInsets.all(10),
+                    child: SizedBox(
+                      width: 300,
+                      height: 300,
+                      child: ElevatedButton(
+                        style: ButtonStyle(
+                          backgroundColor:
+                              MaterialStatePropertyAll<Color>(gunmetal),
+                        ),
+                        onPressed: () {
+                          print("Protokollarchiv");
+                        },
+                        child: Column(
+                          children: [
+                            Container(
+                              padding: EdgeInsets.only(top: 20, bottom: 25),
+                              child: Text(
+                                'Protokollarchiv',
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  color: platinumWhite,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                            Container(
+                              child: Text(
+                                'Im Protokollarchiv hast du Zugriff auf vergangene Einsatzprotokolle.',
+                                style: TextStyle(
+                                  fontSize: 18,
+                                  color: platinumWhite,
+                                  //    fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
                     ),
                   ),
                   Container(
-                    //lower right button
                     margin: const EdgeInsets.only(top: 40, left: 20),
-                    padding: const EdgeInsets.all(20),
-                    decoration: BoxDecoration(
-                      color: gunmetal,
-                      borderRadius: BorderRadius.circular(6),
-                      boxShadow: const [
-                        BoxShadow(
-                            color: Colors.grey,
-                            blurRadius: 2.0,
-                            offset: Offset(6.0, 6.0))
-                      ],
-                    ),
-                    width: 300,
-                    height: 300,
-                    //color: Color(0xff1b2f33),
-                    child: const Text(
-                      'Schichtplan',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                          fontSize: 20,
-                          color: platinumWhite,
-                          fontWeight: FontWeight.bold),
+                    //    padding: const EdgeInsets.all(10),
+                    child: SizedBox(
+                      width: 300,
+                      height: 300,
+                      child: ElevatedButton(
+                        style: ButtonStyle(
+                          backgroundColor:
+                              MaterialStatePropertyAll<Color>(gunmetal),
+                        ),
+                        onPressed: () {
+                          print('Schichtplan');
+                        },
+                        child: Column(
+                          children: [
+                            Container(
+                              padding: EdgeInsets.only(top: 20, bottom: 25),
+                              child: Text(
+                                'Schichtplan',
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  color: platinumWhite,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                            Container(
+                              child: Text(
+                                'Im Schichtplan siehst du, wer an welchen Tagen in welchen Schulstunden Bereitschaft hat.',
+                                style: TextStyle(
+                                  fontSize: 18,
+                                  color: platinumWhite,
+                                  //    fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
                     ),
                   ),
                 ],
