@@ -4,6 +4,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:sani_app/theme/theme_constants.dart';
 import 'package:sani_app/theme/theme_manager.dart';
 
@@ -47,9 +48,11 @@ class _SaniAppState extends State<SaniApp> {
     _themeManager.removeListener((themeListener));
   } //dispose theme listener
 
+  int currentPage = 0;
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Saniapp',
       theme: lightTheme,
       darkTheme: darkTheme,
@@ -81,15 +84,9 @@ class _SaniAppState extends State<SaniApp> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
+                  //  Padding(padding: EdgeInsets.only(top: 180)),
                   Container(
-                    //top button
-                    margin: const EdgeInsets.only(top: 60),
-                    padding: const EdgeInsets.all(25), //TODO different solution
-                    width: 640,
-                    height: 80,
                     decoration: BoxDecoration(
-                      color: burgundy,
-                      borderRadius: BorderRadius.circular(6),
                       boxShadow: const [
                         BoxShadow(
                             color: Colors.grey,
@@ -97,29 +94,36 @@ class _SaniAppState extends State<SaniApp> {
                             offset: Offset(6.0, 6.0))
                       ],
                     ),
-                    child: const Text(
-                      'NEUES EINSATZPROTOKOLL',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                          fontSize: 20,
-                          color: platinumWhite,
-                          fontWeight: FontWeight.bold),
+                    margin: const EdgeInsets.only(top: 120),
+                    //  padding: const EdgeInsets.all(10),
+                    child: SizedBox(
+                      width: 640,
+                      height: 80,
+                      child: ElevatedButton(
+                        style: ButtonStyle(
+                          backgroundColor:
+                              MaterialStatePropertyAll<Color>(burgundy),
+                        ),
+                        onPressed: () {
+                          print("NEUES EINSATZPROTOKOLL");
+                        },
+                        child: Text(
+                          'NEUES EINSATZPROTOKOLL',
+                          style: TextStyle(
+                              fontSize: 20,
+                              color: platinumWhite,
+                              fontWeight: FontWeight.bold),
+                        ),
+                      ),
                     ),
-                  ),
+                  )
                 ],
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Container(
-                    //lower left button
-                    margin: const EdgeInsets.only(top: 40, right: 20),
-                    padding: const EdgeInsets.all(20),
-                    width: 300,
-                    height: 450,
                     decoration: BoxDecoration(
-                      color: gunmetal,
-                      borderRadius: BorderRadius.circular(6),
                       boxShadow: const [
                         BoxShadow(
                             color: Colors.grey,
@@ -127,40 +131,99 @@ class _SaniAppState extends State<SaniApp> {
                             offset: Offset(6.0, 6.0))
                       ],
                     ),
-
-                    // color: Color(0xff1b2f33),
-                    child: const Text(
-                      'Protokollarchiv',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                          fontSize: 20,
-                          color: platinumWhite,
-                          fontWeight: FontWeight.bold),
+                    margin: const EdgeInsets.only(top: 40, right: 20),
+                    // padding: const EdgeInsets.all(10),
+                    child: SizedBox(
+                      width: 300,
+                      height: 300,
+                      child: ElevatedButton(
+                        style: ButtonStyle(
+                          backgroundColor:
+                              MaterialStatePropertyAll<Color>(gunmetal),
+                        ),
+                        onPressed: () {
+                          print("Protokollarchiv");
+                        },
+                        child: Column(
+                          children: [
+                            Container(
+                              padding: EdgeInsets.only(top: 20, bottom: 35),
+                              child: Text(
+                                'Protokollarchiv',
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  color: platinumWhite,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                            Container(
+                              padding: EdgeInsets.only(left: 10, right: 10),
+                              child: Text(
+                                'Im Protokollarchiv hast du Zugriff auf vergangene Einsatzprotokolle.',
+                                style: TextStyle(
+                                  fontSize: 18,
+                                  color: platinumWhite,
+                                  height: 1.4,
+                                  //    fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
                     ),
                   ),
                   Container(
-                    //lower right button
-                    margin: const EdgeInsets.only(top: 40, left: 20),
-                    padding: const EdgeInsets.all(20),
                     decoration: BoxDecoration(
-                        color: gunmetal,
-                        borderRadius: BorderRadius.circular(6),
-                        boxShadow: const [
-                          BoxShadow(
-                              color: Colors.grey,
-                              blurRadius: 2.0,
-                              offset: Offset(6.0, 6.0))
-                        ]),
-                    width: 300,
-                    height: 450,
-                    //color: Color(0xff1b2f33),
-                    child: const Text(
-                      'Schichtplan',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                          fontSize: 20,
-                          color: platinumWhite,
-                          fontWeight: FontWeight.bold),
+                      boxShadow: const [
+                        BoxShadow(
+                            color: Colors.grey,
+                            blurRadius: 2.0,
+                            offset: Offset(6.0, 6.0))
+                      ],
+                    ),
+                    margin: const EdgeInsets.only(top: 40, left: 20),
+                    //    padding: const EdgeInsets.all(10),
+                    child: SizedBox(
+                      width: 300,
+                      height: 300,
+                      child: ElevatedButton(
+                        style: ButtonStyle(
+                          backgroundColor:
+                              MaterialStatePropertyAll<Color>(gunmetal),
+                        ),
+                        onPressed: () {
+                          print('Schichtplan');
+                        },
+                        child: Column(
+                          children: [
+                            Container(
+                              padding: EdgeInsets.only(top: 20, bottom: 35),
+                              child: Text(
+                                'Schichtplan',
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  color: platinumWhite,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                            Container(
+                              padding: EdgeInsets.only(left: 10, right: 10),
+                              child: Text(
+                                'Im Schichtplan siehst du, wer an welchen Tagen in welchen Schulstunden Bereitschaft hat.',
+                                style: TextStyle(
+                                  fontSize: 18,
+                                  color: platinumWhite,
+                                  height: 1.4,
+                                  //    fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
                     ),
                   ),
                 ],
@@ -180,22 +243,25 @@ class einsatzprotokollPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'Einsatzprotokoll Page',
-        home: Scaffold(
-            appBar: AppBar(
+      title: 'Einsatzprotokoll Page',
+      home: Scaffold(
+        appBar: AppBar(
           //App Bar
           actions: [
             Switch(
-                value: _themeManager.themeMode == ThemeMode.dark,
-                onChanged: (newValue) {
-                  _themeManager.toggleTheme(newValue);
-                })
+              value: _themeManager.themeMode == ThemeMode.dark,
+              onChanged: (newValue) {
+                _themeManager.toggleTheme(newValue);
+              },
+            )
           ],
           //backgroundColor: Colors.white,
           elevation: 0.5, //Line under app bar
           title: const Text(
             'Schulsanitöter Organisationsapp', //Text displayed in app bar
           ),
-        )));
+        ),
+      ),
+    );
   }
 }
