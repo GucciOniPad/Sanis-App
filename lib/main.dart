@@ -60,6 +60,7 @@ class _SaniAppState extends State<SaniApp> {
       home: Scaffold(
         appBar: AppBar(
           //App Bar
+          //centerTitle: true,
           actions: [
             Switch(
                 value: _themeManager.themeMode == ThemeMode.dark,
@@ -68,17 +69,18 @@ class _SaniAppState extends State<SaniApp> {
                 })
           ],
           leading: IconButton(
+            //padding: EdgeInsets.only(bottom: 19),
+            //alignment: Alignment.topCenter,
             icon: Image.asset('assets/darksplash.png'),
             onPressed: () => exit(0),
             tooltip: 'quit apllication',
           ),
           elevation: 0.5, //Line under app bar
-          title: const Text(
-              'Schulsanitöter Organisationsapp'), //Text displayed in app bar
+          title: Text(
+            'Schulsanitöter Organisationsapp',
+          ), //Text displayed in app bar
         ),
         body: Container(
-          //color: Colors.white,
-          // alignment: Alignment.topCenter,
           child: Column(
             children: <Widget>[
               Row(
