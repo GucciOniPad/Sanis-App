@@ -132,7 +132,7 @@ class _SaniAppState extends State<SaniApp> {
                         child: Column(
                           children: [
                             Container(
-                              padding: EdgeInsets.only(top: 20, bottom: 25),
+                              padding: EdgeInsets.only(top: 20, bottom: 35),
                               child: Text(
                                 'Protokollarchiv',
                                 style: TextStyle(
@@ -143,11 +143,13 @@ class _SaniAppState extends State<SaniApp> {
                               ),
                             ),
                             Container(
+                              padding: EdgeInsets.only(left: 10, right: 10),
                               child: Text(
                                 'Im Protokollarchiv hast du Zugriff auf vergangene Einsatzprotokolle.',
                                 style: TextStyle(
                                   fontSize: 18,
                                   color: platinumWhite,
+                                  height: 1.4,
                                   //    fontWeight: FontWeight.bold,
                                 ),
                               ),
@@ -174,7 +176,7 @@ class _SaniAppState extends State<SaniApp> {
                         child: Column(
                           children: [
                             Container(
-                              padding: EdgeInsets.only(top: 20, bottom: 25),
+                              padding: EdgeInsets.only(top: 20, bottom: 35),
                               child: Text(
                                 'Schichtplan',
                                 style: TextStyle(
@@ -185,11 +187,13 @@ class _SaniAppState extends State<SaniApp> {
                               ),
                             ),
                             Container(
+                              padding: EdgeInsets.only(left: 10, right: 10),
                               child: Text(
                                 'Im Schichtplan siehst du, wer an welchen Tagen in welchen Schulstunden Bereitschaft hat.',
                                 style: TextStyle(
                                   fontSize: 18,
                                   color: platinumWhite,
+                                  height: 1.4,
                                   //    fontWeight: FontWeight.bold,
                                 ),
                               ),
