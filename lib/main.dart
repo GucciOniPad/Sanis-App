@@ -10,7 +10,7 @@ const crayolaBlue = Color(0xff1b2f33);
 const platinumWhite = Color(0xffebebeb);
 const burgundy = Color(0xffE21239);
 const gunmetal = Color(0xff3f6f78);
-//const smokyBlack = Color(0xFF121212);
+//const smokyBlack = Color(0xFF121212); <- evtl. andere Fabre für Darkmode
 const jet = Color(0xFF303030);
 
 void main() {
@@ -24,26 +24,26 @@ class SaniApp extends StatefulWidget {
 
   @override
   State<SaniApp> createState() => _SaniAppState();
-}
+} //creation of stateful widget
 
 class _SaniAppState extends State<SaniApp> {
   @override
   void initState() {
     super.initState();
     _themeManager.addListener((themeListener));
-  }
+  } //Function to change state and add the theme listener
 
   themeListener() {
     if (mounted) {
       setState(() {});
     }
-  }
+  } //theme listener
 
   @override
   void dispose() {
     super.dispose();
     _themeManager.removeListener((themeListener));
-  }
+  } //dispose theme listener
 
   @override
   Widget build(BuildContext context) {
@@ -62,7 +62,10 @@ class _SaniAppState extends State<SaniApp> {
                   _themeManager.toggleTheme(newValue);
                 })
           ],
-          //backgroundColor: Colors.white,
+          leading: IconButton(
+            icon: Image.asset('assets/splash.png'),
+            onPressed: (() {}),
+          ),
           elevation: 0.5, //Line under app bar
           title: const Text(
               'Schulsanitöter Organisationsapp'), //Text displayed in app bar

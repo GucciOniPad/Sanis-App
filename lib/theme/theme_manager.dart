@@ -1,6 +1,8 @@
 //import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+//Hier die Methode um die Themes zu setzen
+
 class ThemeManager with ChangeNotifier {
   ThemeMode _themeMode = ThemeMode.light;
 
