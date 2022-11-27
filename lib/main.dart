@@ -5,6 +5,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:sani_app/neuesProtokoll.dart';
 import 'package:sani_app/theme/theme_constants.dart';
 import 'package:sani_app/theme/theme_manager.dart';
 
@@ -103,11 +104,12 @@ class _SaniAppState extends State<SaniApp> {
                       child: ElevatedButton(
                         style: ButtonStyle(
                           splashFactory: NoSplash.splashFactory,
+                          enableFeedback: false,
                           backgroundColor:
                               MaterialStatePropertyAll<Color>(burgundy),
                         ),
                         onPressed: () {
-                          print("NEUES EINSATZPROTOKOLL");
+                          print("Neues Einsatzprotokoll");
                         },
                         child: Text(
                           'NEUES EINSATZPROTOKOLL',
@@ -141,6 +143,7 @@ class _SaniAppState extends State<SaniApp> {
                       child: ElevatedButton(
                         style: ButtonStyle(
                           splashFactory: NoSplash.splashFactory,
+                          enableFeedback: false,
                           backgroundColor:
                               MaterialStatePropertyAll<Color>(gunmetal),
                         ),
@@ -194,6 +197,7 @@ class _SaniAppState extends State<SaniApp> {
                       child: ElevatedButton(
                         style: ButtonStyle(
                           splashFactory: NoSplash.splashFactory,
+                          enableFeedback: false,
                           backgroundColor:
                               MaterialStatePropertyAll<Color>(gunmetal),
                         ),
@@ -240,6 +244,7 @@ class _SaniAppState extends State<SaniApp> {
   }
 }
 
+/*
 //einsatzprotokoll page
 class einsatzprotokollPage extends StatelessWidget {
   const einsatzprotokollPage({super.key});
@@ -269,3 +274,4 @@ class einsatzprotokollPage extends StatelessWidget {
     );
   }
 }
+m*/
