@@ -48,7 +48,6 @@ class _SaniAppState extends State<SaniApp> {
     _themeManager.removeListener((themeListener));
   } //dispose theme listener
 
-  int currentPage = 0;
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -103,6 +102,7 @@ class _SaniAppState extends State<SaniApp> {
                       height: 80,
                       child: ElevatedButton(
                         style: ButtonStyle(
+                          splashFactory: NoSplash.splashFactory,
                           backgroundColor:
                               MaterialStatePropertyAll<Color>(burgundy),
                         ),
@@ -140,6 +140,7 @@ class _SaniAppState extends State<SaniApp> {
                       height: 300,
                       child: ElevatedButton(
                         style: ButtonStyle(
+                          splashFactory: NoSplash.splashFactory,
                           backgroundColor:
                               MaterialStatePropertyAll<Color>(gunmetal),
                         ),
@@ -192,6 +193,7 @@ class _SaniAppState extends State<SaniApp> {
                       height: 300,
                       child: ElevatedButton(
                         style: ButtonStyle(
+                          splashFactory: NoSplash.splashFactory,
                           backgroundColor:
                               MaterialStatePropertyAll<Color>(gunmetal),
                         ),
