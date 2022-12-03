@@ -62,18 +62,21 @@ class _SaniAppState extends State<SaniApp> {
           //App Bar
           //centerTitle: true,
           actions: [
-            Switch(
-                value: _themeManager.themeMode == ThemeMode.dark,
-                onChanged: (newValue) {
-                  _themeManager.toggleTheme(newValue);
-                })
+            Tooltip(
+              message: "Toggle theme",
+              child: Switch(
+                  value: _themeManager.themeMode == ThemeMode.dark,
+                  onChanged: (newValue) {
+                    _themeManager.toggleTheme(newValue);
+                  }),
+            )
           ],
           leading: IconButton(
             //padding: EdgeInsets.only(bottom: 19),
             //alignment: Alignment.topCenter,
             icon: Image.asset('assets/darksplash.png'),
             onPressed: () => exit(0),
-            tooltip: 'quit apllication',
+            tooltip: 'Quit apllication',
           ),
           elevation: 0.5, //Line under app bar
           title: Text(
@@ -101,22 +104,25 @@ class _SaniAppState extends State<SaniApp> {
                     child: SizedBox(
                       width: 640,
                       height: 80,
-                      child: ElevatedButton(
-                        style: ButtonStyle(
-                          splashFactory: NoSplash.splashFactory,
-                          enableFeedback: false,
-                          backgroundColor:
-                              MaterialStatePropertyAll<Color>(burgundy),
-                        ),
-                        onPressed: () {
-                          print("Neues Einsatzprotokoll");
-                        },
-                        child: Text(
-                          'NEUES EINSATZPROTOKOLL',
-                          style: TextStyle(
-                              fontSize: 20,
-                              color: platinumWhite,
-                              fontWeight: FontWeight.bold),
+                      child: Tooltip(
+                        message: "Open new case",
+                        child: ElevatedButton(
+                          style: ButtonStyle(
+                            splashFactory: NoSplash.splashFactory,
+                            enableFeedback: false,
+                            backgroundColor:
+                                MaterialStatePropertyAll<Color>(burgundy),
+                          ),
+                          onPressed: () {
+                            print("Neues Einsatzprotokoll");
+                          },
+                          child: Text(
+                            'NEUES EINSATZPROTOKOLL',
+                            style: TextStyle(
+                                fontSize: 20,
+                                color: platinumWhite,
+                                fontWeight: FontWeight.bold),
+                          ),
                         ),
                       ),
                     ),
@@ -137,45 +143,48 @@ class _SaniAppState extends State<SaniApp> {
                     ),
                     margin: const EdgeInsets.only(top: 40, right: 20),
                     // padding: const EdgeInsets.all(10),
-                    child: SizedBox(
-                      width: 300,
-                      height: 300,
-                      child: ElevatedButton(
-                        style: ButtonStyle(
-                          splashFactory: NoSplash.splashFactory,
-                          enableFeedback: false,
-                          backgroundColor:
-                              MaterialStatePropertyAll<Color>(gunmetal),
-                        ),
-                        onPressed: () {
-                          print("Protokollarchiv");
-                        },
-                        child: Column(
-                          children: [
-                            Container(
-                              padding: EdgeInsets.only(top: 20, bottom: 35),
-                              child: Text(
-                                'Protokollarchiv',
-                                style: TextStyle(
-                                  fontSize: 20,
-                                  color: platinumWhite,
-                                  fontWeight: FontWeight.bold,
+                    child: Tooltip(
+                      message: "Open archive",
+                      child: SizedBox(
+                        width: 300,
+                        height: 300,
+                        child: ElevatedButton(
+                          style: ButtonStyle(
+                            splashFactory: NoSplash.splashFactory,
+                            enableFeedback: false,
+                            backgroundColor:
+                                MaterialStatePropertyAll<Color>(gunmetal),
+                          ),
+                          onPressed: () {
+                            print("Protokollarchiv");
+                          },
+                          child: Column(
+                            children: [
+                              Container(
+                                padding: EdgeInsets.only(top: 20, bottom: 35),
+                                child: Text(
+                                  'Protokollarchiv',
+                                  style: TextStyle(
+                                    fontSize: 20,
+                                    color: platinumWhite,
+                                    fontWeight: FontWeight.bold,
+                                  ),
                                 ),
                               ),
-                            ),
-                            Container(
-                              padding: EdgeInsets.only(left: 10, right: 10),
-                              child: Text(
-                                'Im Protokollarchiv hast du Zugriff auf vergangene Einsatzprotokolle.',
-                                style: TextStyle(
-                                  fontSize: 18,
-                                  color: platinumWhite,
-                                  height: 1.4,
-                                  //    fontWeight: FontWeight.bold,
+                              Container(
+                                padding: EdgeInsets.only(left: 10, right: 10),
+                                child: Text(
+                                  'Im Protokollarchiv hast du Zugriff auf vergangene Einsatzprotokolle.',
+                                  style: TextStyle(
+                                    fontSize: 18,
+                                    color: platinumWhite,
+                                    height: 1.4,
+                                    //    fontWeight: FontWeight.bold,
+                                  ),
                                 ),
-                              ),
-                            )
-                          ],
+                              )
+                            ],
+                          ),
                         ),
                       ),
                     ),
@@ -191,45 +200,48 @@ class _SaniAppState extends State<SaniApp> {
                     ),
                     margin: const EdgeInsets.only(top: 40, left: 20),
                     //    padding: const EdgeInsets.all(10),
-                    child: SizedBox(
-                      width: 300,
-                      height: 300,
-                      child: ElevatedButton(
-                        style: ButtonStyle(
-                          splashFactory: NoSplash.splashFactory,
-                          enableFeedback: false,
-                          backgroundColor:
-                              MaterialStatePropertyAll<Color>(gunmetal),
-                        ),
-                        onPressed: () {
-                          print('Schichtplan');
-                        },
-                        child: Column(
-                          children: [
-                            Container(
-                              padding: EdgeInsets.only(top: 20, bottom: 35),
-                              child: Text(
-                                'Schichtplan',
-                                style: TextStyle(
-                                  fontSize: 20,
-                                  color: platinumWhite,
-                                  fontWeight: FontWeight.bold,
+                    child: Tooltip(
+                      message: "Open schedule",
+                      child: SizedBox(
+                        width: 300,
+                        height: 300,
+                        child: ElevatedButton(
+                          style: ButtonStyle(
+                            splashFactory: NoSplash.splashFactory,
+                            enableFeedback: false,
+                            backgroundColor:
+                                MaterialStatePropertyAll<Color>(gunmetal),
+                          ),
+                          onPressed: () {
+                            print('Schichtplan');
+                          },
+                          child: Column(
+                            children: [
+                              Container(
+                                padding: EdgeInsets.only(top: 20, bottom: 35),
+                                child: Text(
+                                  'Schichtplan',
+                                  style: TextStyle(
+                                    fontSize: 20,
+                                    color: platinumWhite,
+                                    fontWeight: FontWeight.bold,
+                                  ),
                                 ),
                               ),
-                            ),
-                            Container(
-                              padding: EdgeInsets.only(left: 10, right: 10),
-                              child: Text(
-                                'Im Schichtplan siehst du, wer an welchen Tagen in welchen Schulstunden Bereitschaft hat.',
-                                style: TextStyle(
-                                  fontSize: 18,
-                                  color: platinumWhite,
-                                  height: 1.4,
-                                  //    fontWeight: FontWeight.bold,
+                              Container(
+                                padding: EdgeInsets.only(left: 10, right: 10),
+                                child: Text(
+                                  'Im Schichtplan siehst du, wer an welchen Tagen in welchen Schulstunden Bereitschaft hat.',
+                                  style: TextStyle(
+                                    fontSize: 18,
+                                    color: platinumWhite,
+                                    height: 1.4,
+                                    //    fontWeight: FontWeight.bold,
+                                  ),
                                 ),
-                              ),
-                            )
-                          ],
+                              )
+                            ],
+                          ),
                         ),
                       ),
                     ),
