@@ -5,7 +5,7 @@ import 'post_model.dart';
 class PostsPage extends StatefulWidget {
   @override
   _PostsPageState createState() => _PostsPageState();
-}
+} 
 
 class _PostsPageState extends State<PostsPage> {
   final HttpService httpService = HttpService();
